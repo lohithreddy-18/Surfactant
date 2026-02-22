@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SurfTech Industries — Surfactant Manufacturing, Tirupati</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1e2d;
+    --bg2: #162636;
+    --bg3: #1a2f42;
+    --teal: #00c2cc;
+    --teal2: #00858c;
+    --amber: #f5a623;
+    --green: #2ecc71;
+    --red: #e74c3c;
+    --text: #e8edf2;
+    --muted: #8a9bb0;
+    --border: rgba(0,194,204,0.18);
+    --card: rgba(13,24,33,0.92);
+    --glow: 0 0 32px rgba(0,194,204,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,194,204,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,194,204,0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 64px;
+    background: rgba(8,14,20,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--teal);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--amber); }
+
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--teal);
+    border-color: var(--border);
+    background: rgba(0,194,204,0.06);
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(0,194,204,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--teal);
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    display: inline-block;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 110px);
+    line-height: 0.92;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    animation: fadeDown 0.9s ease 0.1s both;
+  }
+
+  .hero-title .line1 { display: block; color: var(--text); }
+  .hero-title .line2 { display: block; color: var(--teal); }
+  .hero-title .line3 { display: block; color: var(--amber); font-size: 65%; }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 20px auto 40px;
+    animation: fadeDown 1s ease 0.2s both;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeDown 1s ease 0.3s both;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: #080e14;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: all 0.2s;
+    border: 2px solid var(--teal);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--teal);
+    box-shadow: var(--glow);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 3px;
+    border: 2px solid rgba(255,255,255,0.15);
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+
+  .btn-download {
+    background: linear-gradient(135deg, var(--amber), #e8891a);
+    color: #080e14;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 3px;
+    font-weight: 700;
+    border: 2px solid var(--amber);
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-download:hover {
+    background: transparent;
+    color: var(--amber);
+    box-shadow: 0 0 32px rgba(245,166,35,0.25);
+  }
+
+  /* ── STAT BAR ── */
+  .stat-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-item {
+    padding: 36px 28px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .stat-item:last-child { border-right: none; }
+  .stat-item:hover { background: rgba(0,194,204,0.06); }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--teal);
+    display: block;
+  }
+
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── SECTION COMMON ── */
+  section {
+    padding: 100px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 58px);
+    letter-spacing: 1px;
+    line-height: 1;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .section-title span { color: var(--teal); }
+
+  .section-desc {
+    color: var(--muted);
+    max-width: 640px;
+    font-size: 17px;
+    margin-bottom: 56px;
+    font-weight: 500;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--teal), transparent);
+    opacity: 0.3;
+    margin: 0;
+  }
+
+  /* ── PRODUCT CARDS ── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .product-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--amber));
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--glow);
+  }
+
+  .product-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  .badge-priority { background: rgba(0,194,204,0.15); color: var(--teal); }
+  .badge-skip { background: rgba(231,76,60,0.15); color: var(--red); }
+
+  .product-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .product-name span { color: var(--teal); }
+
+  .product-desc { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+
+  .product-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .pstat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    padding: 14px;
+  }
+
+  .pstat-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--amber);
+    display: block;
+  }
+
+  .pstat-key {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* ── WHY US ── */
+  #why { background: var(--bg2); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .why-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+  }
+
+  .why-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+  }
+
+  .why-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .why-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+
+  .why-text { color: var(--muted); font-size: 15px; line-height: 1.6; }
+
+  /* ── COMPARISON TABLE ── */
+  #compare { background: var(--bg3); }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  .compare-table th {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding: 14px 20px;
+    border-bottom: 2px solid var(--border);
+    text-align: left;
+    background: rgba(0,194,204,0.06);
+  }
+
+  .compare-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--text);
+    vertical-align: middle;
+  }
+
+  .compare-table tr:hover td { background: rgba(0,194,204,0.04); }
+
+  .compare-table .us { color: var(--green); font-weight: 600; }
+  .compare-table .them { color: var(--red); }
+  .compare-table .factor { font-weight: 600; color: var(--amber); font-family: 'Space Mono', monospace; font-size: 12px; }
+
+  .win-badge {
+    display: inline-block;
+    background: rgba(46,204,113,0.15);
+    color: var(--green);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-left: 8px;
+  }
+
+  /* ── RAW MATERIALS ── */
+  .materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .material-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px;
+    transition: border-color 0.2s;
+  }
+
+  .material-card:hover { border-color: var(--teal2); }
+
+  .mat-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+
+  .mat-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .mat-tech {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+
+  .mat-price {
+    font-weight: 700;
+    color: var(--amber);
+    font-size: 15px;
+  }
+
+  .mat-source { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* ── INVESTMENT ── */
+  #investment { background: var(--bg2); }
+
+  .invest-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .invest-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .invest-table tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .invest-table tr:last-child { border-bottom: none; border-top: 2px solid var(--teal); }
+  .invest-table tr:hover td { background: rgba(0,194,204,0.04); }
+
+  .invest-table td {
+    padding: 13px 16px;
+    font-size: 15px;
+  }
+
+  .invest-table td:last-child {
+    text-align: right;
+    font-family: 'Space Mono', monospace;
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .invest-table tr:last-child td {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--teal);
+  }
+
+  .new-item td { color: var(--green) !important; }
+  .new-item td:first-child::after {
+    content: ' ✦ NEW';
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--green);
+    margin-left: 6px;
+  }
+
+  /* ── DONUT CHART ── */
+  .chart-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .donut-svg { width: 260px; height: 260px; }
+
+  .donut-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── MARGINS ── */
+  .margin-bars { display: flex; flex-direction: column; gap: 20px; }
+
+  .mbar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .mbar-label span:last-child {
+    font-family: 'Space Mono', monospace;
+    color: var(--amber);
+  }
+
+  .mbar-track {
+    height: 12px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .mbar-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--teal), var(--amber));
+    transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
+    width: 0;
+  }
+
+  .mbar-fill.animate { width: var(--target-width); }
+
+  /* ── TIMELINE ── */
+  #timeline { background: var(--bg3); }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .tl-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px;
+    position: relative;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .tl-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--teal2);
+  }
+
+  .tl-month {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+
+  .tl-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .tl-rev {
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    color: var(--amber);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .tl-task { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+  /* ── SUBSIDIES ── */
+  #subsidies { background: var(--bg2); }
+
+  .subsidy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .subsidy-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    transition: transform 0.2s;
+  }
+
+  .subsidy-card:hover { transform: translateY(-4px); }
+
+  .subsidy-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+
+  .subsidy-name {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .subsidy-how { font-size: 14px; color: var(--muted); }
+
+  /* ── QUALITY ── */
+  .spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .spec-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .spec-header {
+    background: linear-gradient(135deg, rgba(0,194,204,0.15), rgba(0,194,204,0.05));
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .spec-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+
+  .spec-subtitle { font-size: 13px; color: var(--muted); }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 14px;
+  }
+
+  .spec-param { color: var(--muted); }
+  .spec-val { font-family: 'Space Mono', monospace; color: var(--amber); font-size: 13px; }
+  .spec-target { color: var(--green); font-family: 'Space Mono', monospace; font-size: 12px; }
+
+  /* ── BUYERS ── */
+  #buyers { background: var(--bg3); }
+
+  .buyers-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active, .tab-btn:hover {
+    background: rgba(0,194,204,0.12);
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+
+  .buyers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .buyer-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px;
+    transition: border-color 0.2s;
+  }
+
+  .buyer-card:hover { border-color: var(--teal2); }
+
+  .buyer-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .buyer-loc {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--teal);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .buyer-vol { font-size: 14px; color: var(--amber); font-weight: 600; }
+  .buyer-prod { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* ── RISK ── */
+  .risk-row {
+    display: grid;
+    grid-template-columns: 2fr 80px 80px 3fr;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 14px;
+    transition: border-color 0.2s;
+  }
+
+  .risk-row:hover { border-color: var(--teal2); }
+
+  .risk-name { font-weight: 600; color: var(--text); }
+
+  .risk-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 99px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .pill-high { background: rgba(231,76,60,0.18); color: var(--red); }
+  .pill-med { background: rgba(245,166,35,0.18); color: var(--amber); }
+  .pill-low { background: rgba(46,204,113,0.18); color: var(--green); }
+  .risk-mitigation { color: var(--muted); }
+
+  .risk-header {
+    display: grid;
+    grid-template-columns: 2fr 80px 80px 3fr;
+    gap: 16px;
+    padding: 8px 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ── CHECKLIST ── */
+  #checklist { background: var(--bg2); }
+
+  .checklist-phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .phase-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .phase-header {
+    padding: 18px 22px;
+    background: linear-gradient(135deg, rgba(0,194,204,0.12), rgba(0,194,204,0.04));
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .phase-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--teal);
+    line-height: 1;
+  }
+
+  .phase-title { font-weight: 700; font-size: 16px; }
+  .phase-sub { font-size: 12px; color: var(--muted); }
+
+  .phase-items { padding: 16px 22px; }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .check-item:last-child { border-bottom: none; }
+
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--teal2);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: transparent;
+  }
+
+  .check-box.checked {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #080e14;
+  }
+
+  .check-item.checked-item .check-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  /* ── PROJECTIONS ── */
+  #projections { background: var(--bg3); }
+
+  .proj-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .proj-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    text-align: center;
+  }
+
+  .proj-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .proj-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+
+  .proj-sub { font-size: 13px; color: var(--muted); }
+
+  /* ── REVENUE BAR CHART ── */
+  .revenue-chart {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+  }
+
+  .rev-chart-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    height: 160px;
+  }
+
+  .bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    height: 100%;
+    justify-content: flex-end;
+  }
+
+  .bar-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--amber);
+  }
+
+  .bar-block {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(180deg, var(--teal), var(--teal2));
+    transition: height 1.4s cubic-bezier(0.4,0,0.2,1);
+    height: 0;
+    min-height: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bar-block::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 40%;
+    background: rgba(255,255,255,0.12);
+  }
+
+  .bar-block.animate { height: var(--bar-height); }
+
+  .bar-month {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ── GAPS SECTION ── */
+  #gaps { background: var(--bg2); }
+
+  .gaps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  .gap-card {
+    background: var(--card);
+    border: 1px solid rgba(231,76,60,0.2);
+    border-left: 3px solid var(--red);
+    border-radius: 0 6px 6px 0;
+    padding: 20px 22px;
+  }
+
+  .gap-card.tip {
+    border-left-color: var(--green);
+    border-color: rgba(46,204,113,0.15);
+    border-left-width: 3px;
+  }
+
+  .gap-title {
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .gap-text { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+  .gap-icon {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #050a0f;
+    border-top: 1px solid var(--border);
+    padding: 60px 40px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 4px;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+
+  .footer-logo span { color: var(--amber); }
+
+  .footer-sub { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--teal); }
+
+  .footer-copy { font-size: 13px; color: rgba(138,155,176,0.5); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: rgba(0,194,204,0.06);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 6px 6px 0;
+    padding: 18px 22px;
+    font-size: 15px;
+    color: var(--muted);
+    margin: 24px 0;
+  }
+
+  .highlight-box strong { color: var(--teal); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 70px 20px; }
+    .stat-bar { grid-template-columns: 1fr 1fr; }
+    .invest-layout { grid-template-columns: 1fr; }
+    .spec-grid { grid-template-columns: 1fr; }
+    .proj-cards { grid-template-columns: 1fr; }
+    .risk-row { grid-template-columns: 1fr; }
+    .risk-header { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .stat-bar { grid-template-columns: 1fr 1fr; }
+    .hero-title { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">SURF<span>TECH</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why">Advantages</a></li>
+    <li><a href="#materials">Materials</a></li>
+    <li><a href="#investment">Investment</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#subsidies">Subsidies</a></li>
+    <li><a href="#quality">Quality</a></li>
+    <li><a href="#buyers">Buyers</a></li>
+    <li><a href="#risk">Risk</a></li>
+    <li><a href="#projections">Projections</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-orb"></div>
+  <div class="hero-tag">Confidential Business Plan — 2025</div>
+  <h1 class="hero-title">
+    <span class="line1">Surfactant</span>
+    <span class="line2">Manufacturing</span>
+    <span class="line3">Plant — Tirupati, Andhra Pradesh</span>
+  </h1>
+  <p class="hero-sub">
+    A greenfield chemical manufacturing unit producing SLS 92% Needles and CAPB 35% Liquid for South India's soap, shampoo, and personal care industry.
+  </p>
+  <div class="hero-cta">
+    <a href="#products" class="btn-primary">Explore the Plan</a>
+    <a href="#investment" class="btn-outline">See Financials</a>
+  </div>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:16px;animation:fadeDown 1s ease 0.4s both;">
+    <a href="surfactant_plan_professional.docx" download class="btn-download" title="Full Business Plan — Investment, Subsidies, Buyers, Licenses">
+      ⬇ &nbsp;Business Plan <span style="font-size:10px;opacity:0.8;">(Full Plan · DOCX)</span>
+    </a>
+    <a href="surfactant_technical_deepdive.docx" download class="btn-download" style="background:linear-gradient(135deg,#2ecc71,#1aaa55);border-color:#2ecc71;" title="Technical Report — Glycerin, CAPB batch, ETP, Generator, Bank Loan paragraph">
+      ⬇ &nbsp;Technical Report <span style="font-size:10px;opacity:0.8;">(11 Q&As · DOCX)</span>
+    </a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stat-bar">
+  <div class="stat-item reveal">
+    <span class="stat-num">₹45L</span>
+    <span class="stat-label">Total Investment</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">₹3Cr</span>
+    <span class="stat-label">Year 1 Revenue Target</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">37%</span>
+    <span class="stat-label">Gross Margin (SLS)</span>
+  </div>
+  <div class="stat-item reveal">
+    <span class="stat-num">65+</span>
+    <span class="stat-label">Target Buyers by Year-End</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-inner">
+    <span class="section-tag reveal">What We Manufacture</span>
+    <h2 class="section-title reveal">Our <span>Products</span></h2>
+    <p class="section-desc reveal">Two high-demand surfactants used in virtually every soap and shampoo on the market. We manufacture them with consistent quality and deliver faster than any import.</p>
+
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <span class="product-badge badge-priority">High Priority</span>
+        <div class="product-name">SLS <span>92%</span></div>
+        <div style="font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:10px;">Sodium Lauryl Sulfate — Needles</div>
+        <p class="product-desc">White crystalline solid. The primary foaming and cleansing agent in bar soaps, toothpaste, and shampoos. Anionic surfactant.</p>
+        <div class="product-stats">
+          <div class="pstat"><span class="pstat-val">₹73–78</span><span class="pstat-key">Profit per kg</span></div>
+          <div class="pstat"><span class="pstat-val">37%</span><span class="pstat-key">Gross Margin</span></div>
+          <div class="pstat"><span class="pstat-val">10 MT</span><span class="pstat-key">Monthly Target</span></div>
+          <div class="pstat"><span class="pstat-val">₹7.8L</span><span class="pstat-key">Monthly Gross Profit</span></div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <span class="product-badge badge-priority">High Priority</span>
+        <div class="product-name">CAPB <span>35%</span></div>
+        <div style="font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:10px;">Cocamidopropyl Betaine — Liquid</div>
+        <p class="product-desc">Clear to pale yellow viscous liquid. Mild amphoteric surfactant used in premium shampoos, baby wash, and facial cleansers.</p>
+        <div class="product-stats">
+          <div class="pstat"><span class="pstat-val">₹45–58</span><span class="pstat-key">Profit per kg</span></div>
+          <div class="pstat"><span class="pstat-val">33%</span><span class="pstat-key">Gross Margin</span></div>
+          <div class="pstat"><span class="pstat-val">8 MT</span><span class="pstat-key">Monthly Target</span></div>
+          <div class="pstat"><span class="pstat-val">₹3.6L</span><span class="pstat-key">Monthly Gross Profit</span></div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" style="opacity:0.7;">
+        <span class="product-badge badge-skip">Not Initially</span>
+        <div class="product-name">SLES <span>70%</span></div>
+        <div style="font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:10px;">Sodium Laureth Sulfate — Deferred</div>
+        <p class="product-desc">Not economical at small scale. Costs ₹163/kg to make, sells at ₹110–120/kg. Negative margin until 100+ MT/month. Revisit at Month 18.</p>
+        <div class="product-stats">
+          <div class="pstat"><span class="pstat-val" style="color:var(--red)">−₹53</span><span class="pstat-key">Loss per kg at scale</span></div>
+          <div class="pstat"><span class="pstat-val" style="color:var(--red)">Negative</span><span class="pstat-key">Margin</span></div>
+          <div class="pstat"><span class="pstat-val">100 MT</span><span class="pstat-key">Needed to break even</span></div>
+          <div class="pstat"><span class="pstat-val">Month 18</span><span class="pstat-key">Review At</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box reveal" style="margin-top:32px;">
+      <strong>Bonus products to consider</strong> with the same reactor: SLS 30% Liquid (20–25% margin), Ammonium Lauryl Sulfate / ALS (30–35%), SLSA for baby care (35–40% premium margin), CAPB 30% for smaller buyers.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <span class="section-tag reveal">Competitive Edge</span>
+    <h2 class="section-title reveal">Why We <span>Win</span></h2>
+    <p class="section-desc reveal">Chinese imports currently dominate the South Indian surfactant market — but carry major disadvantages a local manufacturer exploits with ease.</p>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-icon">⚡</span>
+        <div class="why-title">24–48 Hour Delivery</div>
+        <p class="why-text">Chinese imports take 45–60 days by sea. We deliver anywhere in South India within two days. For buyers with stock-outs, we're the only option.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🎯</span>
+        <div class="why-title">Guaranteed Quality</div>
+        <p class="why-text">Chinese batches are inconsistent — active matter varies, colour varies. We run in-house QC on every single batch with auto-titrator and Karl Fischer, and issue a Certificate of Analysis.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">💰</span>
+        <div class="why-title">20–25% Cheaper</div>
+        <p class="why-text">We sell at ₹195/kg SLS against Chinese landed cost of ₹170–190/kg (after freight + import duty + port charges). Real savings for buyers, healthy margins for us.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">📦</span>
+        <div class="why-title">No Minimum Order Pressure</div>
+        <p class="why-text">Chinese suppliers require 20–25 MT minimum. We supply from 500 kg. This opens up the entire mid and small manufacturer segment — hundreds of buyers Chinese importers can't serve.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🤝</span>
+        <div class="why-title">30-Day Credit Terms</div>
+        <p class="why-text">Chinese sellers demand advance payment or LC. We offer 15–30 day open credit to established buyers — dramatically reducing their working capital burden and building loyalty.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-icon">🇮🇳</span>
+        <div class="why-title">Made in India Advantage</div>
+        <p class="why-text">Post-2020 anti-China sentiment among Indian manufacturers is strong. 'Atmanirbhar Bharat' positioning resonates. No port delays, no geopolitical risk, no forex uncertainty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section id="compare" style="padding-top:0;padding-bottom:80px;background:var(--bg3);">
+  <div class="section-inner">
+    <h3 class="section-title reveal" style="font-size:32px;margin-bottom:24px;">Us vs <span>Chinese Imports</span></h3>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Chinese Imports</th>
+            <th>SurfTech Industries</th>
+            <th>Advantage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="factor">Lead Time</td><td class="them">45–60 days</td><td class="us">24–48 hours <span class="win-badge">WIN</span></td><td>Stock-out emergencies = our business</td></tr>
+          <tr><td class="factor">MOQ</td><td class="them">20–25 MT minimum</td><td class="us">500 kg minimum <span class="win-badge">WIN</span></td><td>Serves 500+ mid/small buyers</td></tr>
+          <tr><td class="factor">Price (SLS)</td><td class="them">₹170–190/kg landed</td><td class="us">₹195/kg <span class="win-badge">WIN</span></td><td>20–25% effective saving for buyer</td></tr>
+          <tr><td class="factor">Quality Docs</td><td class="them">Generic, non-batch CoA</td><td class="us">Batch-specific CoA every delivery <span class="win-badge">WIN</span></td><td>Mandatory for pharma / institutional buyers</td></tr>
+          <tr><td class="factor">Credit Terms</td><td class="them">Advance / LC only</td><td class="us">15–30 day open credit <span class="win-badge">WIN</span></td><td>Reduces buyer working capital need</td></tr>
+          <tr><td class="factor">Communication</td><td class="them">Language barrier + time zone</td><td class="us">Same region, WhatsApp accessible <span class="win-badge">WIN</span></td><td>Faster issue resolution, stronger trust</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RAW MATERIALS -->
+<section id="materials">
+  <div class="section-inner">
+    <span class="section-tag reveal">Supply Chain</span>
+    <h2 class="section-title reveal">Raw <span>Materials</span></h2>
+    <p class="section-desc reveal">Eight key inputs sourced from Gujarat, Maharashtra, Tamil Nadu, and local Tirupati/Chittoor suppliers. Domestic sourcing for speed; import route viable above 3 MT/month.</p>
+
+    <div class="materials-grid">
+      <div class="material-card reveal">
+        <span class="mat-icon">🌴</span>
+        <div class="mat-name">Lauryl Alcohol C12-14</div>
+        <div class="mat-tech">Fatty Alcohol / SLS Feedstock</div>
+        <div class="mat-price">₹150–170/kg</div>
+        <div class="mat-source">Gujarat (Virava, Supramate, Rimpro)</div>
+      </div>
+      <div class="material-card reveal">
+        <span class="mat-icon">⚗️</span>
+        <div class="mat-name">Sulfuric Acid 98%</div>
+        <div class="mat-tech">H₂SO₄ — Sulfonation Agent</div>
+        <div class="mat-price">₹15–25/kg</div>
+        <div class="mat-source">Local Tirupati / GACL Gujarat</div>
+      </div>
+      <div class="material-card reveal">
+        <span class="mat-icon">🧪</span>
+        <div class="mat-name">Caustic Soda (NaOH)</div>
+        <div class="mat-tech">Sodium Hydroxide — Neutralizer</div>
+        <div class="mat-price">₹40–50/kg</div>
+        <div class="mat-source">Chennai Alkalies / Tamil Nadu</div>
+      </div>
+      <div class="material-card reveal">
+        <span class="mat-icon">💧</span>
+        <div class="mat-name">Hydrogen Peroxide</div>
+        <div class="mat-tech">H₂O₂ 50% — Bleaching Agent</div>
+        <div class="mat-price">₹25–35/kg</div>
+        <div class="mat-source">Gujarat Alkalies / Local AP</div>
+      </div>
+      <div class="material-card reveal">
+        <span class="mat-icon">🥥</span>
+        <div class="mat-name">CDEA (Cocamide DEA)</div>
+        <div class="mat-tech">Coconut Fatty Acid DEA — CAPB Feed</div>
+        <div class="mat-price">₹85–95/kg</div>
+        <div class="mat-source">Dadia Chemicals Mumbai / Adani Wilmar</div>
+      </div>
+      <div class="material-card reveal">
+        <span class="mat-icon">🔬</span>
+        <div class="mat-name">MCAA</div>
+        <div class="mat-tech">Monochloroacetic Acid — Betainization</div>
+        <div class="mat-price">₹85–110/kg</div>
+        <div class="mat-source">Gujarat specialty chemical suppliers</div>
+      </div>
+      <div class="material-card reveal">
+        <span class="mat-icon">⚡</span>
+        <div class="mat-name">DMAPA</div>
+        <div class="mat-tech">Dimethylaminopropylamine — CAPB Amine</div>
+        <div class="mat-price">₹200–250/kg</div>
+        <div class="mat-source">Mumbai importers / specialty suppliers</div>
+      </div>
+      <div class="material-card reveal">
+        <span class="mat-icon">🌊</span>
+        <div class="mat-name">DM Water</div>
+        <div class="mat-tech">Demineralized Process Water</div>
+        <div class="mat-price">₹2–5/kg</div>
+        <div class="mat-source">On-site DM plant (₹60–80K install)</div>
+      </div>
+    </div>
+
+    <div class="highlight-box reveal" style="margin-top:32px;">
+      <strong>Cost Build-Up (SLS):</strong> Lauryl Alcohol ₹77.50 + H₂SO₄ ₹5.00 + NaOH ₹4.50 + H₂O₂ ₹0.60 + Chemicals ₹5.00 = <strong>₹92.60 raw material</strong> + ₹29 overhead = <strong>₹121.60 total cost</strong>. Sells at <strong>₹195/kg → ₹73.40 profit per kg</strong>.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MARGINS -->
+<section style="padding-top:0;background:var(--bg2);padding-bottom:80px;">
+  <div class="section-inner">
+    <h3 class="section-title reveal" style="font-size:36px;margin-bottom:12px;">Margin <span>Analysis</span></h3>
+    <p class="section-desc reveal" style="margin-bottom:40px;">Both products generate strong margins. The key is controlling raw material costs through supplier relationships and scale.</p>
+
+    <div class="margin-bars reveal">
+      <div>
+        <div class="mbar-label"><span>SLS 92% Needles — Gross Margin</span><span>37.6%</span></div>
+        <div class="mbar-track"><div class="mbar-fill" style="--target-width:37.6%"></div></div>
+      </div>
+      <div>
+        <div class="mbar-label"><span>CAPB 35% Liquid — Gross Margin</span><span>33.1%</span></div>
+        <div class="mbar-track"><div class="mbar-fill" style="--target-width:33.1%"></div></div>
+      </div>
+      <div>
+        <div class="mbar-label"><span>ALS (Ammonium Lauryl Sulfate) — Estimated</span><span>32%</span></div>
+        <div class="mbar-track"><div class="mbar-fill" style="--target-width:32%"></div></div>
+      </div>
+      <div>
+        <div class="mbar-label"><span>SLSA (Sodium Lauryl Sulfoacetate — Baby Care)</span><span>38%</span></div>
+        <div class="mbar-track"><div class="mbar-fill" style="--target-width:38%"></div></div>
+      </div>
+      <div>
+        <div class="mbar-label"><span style="color:var(--red)">SLES 70% — DO NOT MANUFACTURE INITIALLY</span><span style="color:var(--red)">−35%</span></div>
+        <div class="mbar-track"><div class="mbar-fill" style="--target-width:2%;background:var(--red)"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INVESTMENT -->
+<section id="investment">
+  <div class="section-inner">
+    <span class="section-tag reveal">Capital Plan</span>
+    <h2 class="section-title reveal">Investment <span>Breakdown</span></h2>
+    <p class="section-desc reveal">Total revised investment: ₹48–52 Lakhs. Original plan was ₹45L — revised upward to include mandatory ETP, DM water system, and acid safety infrastructure.</p>
+
+    <div class="invest-layout">
+      <div class="reveal">
+        <table class="invest-table">
+          <tr><td>Reactors & Processing Equipment</td><td>₹20.0L</td></tr>
+          <tr><td>Quality Control Laboratory</td><td>₹7.0L</td></tr>
+          <tr><td>Raw Materials — Opening Stock (3 months)</td><td>₹8.0L</td></tr>
+          <tr><td>Workforce — 12 staff × 6 months</td><td>₹5.0L</td></tr>
+          <tr><td>Factory Shed Construction (3,000 sq ft)</td><td>₹3.0L</td></tr>
+          <tr><td>Electrical & Utilities</td><td>₹2.0L</td></tr>
+          <tr><td>Licenses & Legal</td><td>₹1.5L</td></tr>
+          <tr class="new-item"><td>Effluent Treatment Plant (ETP)</td><td>₹1.0L</td></tr>
+          <tr class="new-item"><td>DM Water Treatment System</td><td>₹0.8L</td></tr>
+          <tr class="new-item"><td>Acid Safety Infrastructure</td><td>₹0.5L</td></tr>
+          <tr><td>Contingency Reserve</td><td>₹2.0L</td></tr>
+          <tr><td><strong>TOTAL REVISED INVESTMENT</strong></td><td><strong>₹51.0L</strong></td></tr>
+        </table>
+        <div style="margin-top:16px;font-size:13px;color:var(--muted);font-family:'Space Mono',monospace;">
+          ✦ GREEN ITEMS = Not in original plan. Now mandatory.
+        </div>
+      </div>
+
+      <div class="chart-wrap reveal">
+        <svg class="donut-svg" viewBox="0 0 200 200">
+          <!-- Donut segments — hand-calculated offsets for pie -->
+          <!-- Total: 51L. Each segment proportional. circumference of r=75 = 471.24 -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#0d1821" stroke-width="30"/>
+          <!-- Reactors 20L = 39.2% = 184.7 of 471.24 -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#00c2cc" stroke-width="30"
+            stroke-dasharray="184.7 471.24" stroke-dashoffset="117.8" transform="rotate(-90 100 100)"/>
+          <!-- QC Lab 7L = 13.7% = 64.6 -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#00858c" stroke-width="30"
+            stroke-dasharray="64.6 471.24" stroke-dashoffset="-66.9" transform="rotate(-90 100 100)"/>
+          <!-- Raw Materials 8L = 15.7% = 73.9 -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#f5a623" stroke-width="30"
+            stroke-dasharray="73.9 471.24" stroke-dashoffset="-131.5" transform="rotate(-90 100 100)"/>
+          <!-- Labor 5L = 9.8% = 46.2 -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#2ecc71" stroke-width="30"
+            stroke-dasharray="46.2 471.24" stroke-dashoffset="-205.4" transform="rotate(-90 100 100)"/>
+          <!-- Shed 3L = 5.9% = 27.8 -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#8e44ad" stroke-width="30"
+            stroke-dasharray="27.8 471.24" stroke-dashoffset="-251.6" transform="rotate(-90 100 100)"/>
+          <!-- Rest 8L = 15.7% -->
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#34495e" stroke-width="30"
+            stroke-dasharray="73.9 471.24" stroke-dashoffset="-279.4" transform="rotate(-90 100 100)"/>
+          <text x="100" y="96" text-anchor="middle" fill="#e8edf2" font-family="Bebas Neue,sans-serif" font-size="24">₹51L</text>
+          <text x="100" y="114" text-anchor="middle" fill="#8a9bb0" font-family="Space Mono,monospace" font-size="8" letter-spacing="2">TOTAL</text>
+        </svg>
+        <div class="donut-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#00c2cc"></div>Reactors (39%)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#00858c"></div>QC Lab (14%)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#f5a623"></div>Raw Materials (16%)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#2ecc71"></div>Labor (10%)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8e44ad"></div>Shed (6%)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#34495e"></div>Other (15%)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-inner">
+    <span class="section-tag reveal">Execution Plan</span>
+    <h2 class="section-title reveal">Month-by-Month <span>Roadmap</span></h2>
+    <p class="section-desc reveal">12-month phased plan from registration to full South India coverage. Year 1 target: ₹2.5–3 Crores revenue.</p>
+
+    <div class="timeline-grid">
+      <div class="tl-card reveal"><div class="tl-month">1–2</div><div class="tl-label">Setup Phase</div><div class="tl-rev">₹0</div><div class="tl-task">Udyam + GST + company reg. Apply CTE (APPCB). CGTMSE loan application. Machinery quotes. Shed construction begins.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">3</div><div class="tl-label">Trial Production</div><div class="tl-rev">₹1L</div><div class="tl-task">Equipment commissioned. First trial: 100 kg SLS. Lab testing. Free 25 kg samples to 5 buyers. Hire QC Chemist.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">4</div><div class="tl-label">First Sales</div><div class="tl-rev">₹3L</div><div class="tl-task">First commercial invoice. 500 kg SLS to 2–3 local factories. CAPB batch trials begin. Collect receivables.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">5</div><div class="tl-label">Scaling Up</div><div class="tl-rev">₹8L</div><div class="tl-task">SLS → 2 MT/month. CAPB commercial production (1 MT). 10+ active buyers. 4 operators hired.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">6</div><div class="tl-label">Local Market</div><div class="tl-rev">₹13L</div><div class="tl-task">Full Tirupati/AP market coverage. Apply AP MSME capital subsidy post-DCP. ISO 9001 initiated. 15+ buyers.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">7</div><div class="tl-label">Chennai Entry</div><div class="tl-rev">₹20L</div><div class="tl-task">Target Wintrust Pharma + Pandian Surfactants. Dedicated TN sales executive. 25+ buyers.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">8</div><div class="tl-label">Bangalore Entry</div><div class="tl-rev">₹24L</div><div class="tl-task">Dermasist Lab + contract manufacturers. Private label producers. 35+ buyers. ISO 9001 in process.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">9</div><div class="tl-label">Hyderabad Entry</div><div class="tl-rev">₹28L</div><div class="tl-task">Pharma soap units, personal care manufacturers in Hyderabad. 45+ buyers.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">10</div><div class="tl-label">Kerala Entry</div><div class="tl-rev">₹31L</div><div class="tl-task">Cochin Petromins, Ayurvedic brands, handmade soap cooperatives Kerala. 55+ buyers.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">11</div><div class="tl-label">Tamil Nadu Deep</div><div class="tl-rev">₹33L</div><div class="tl-task">Salem, Coimbatore, Madurai clusters. Review SLES viability at current scale. 60+ buyers.</div></div>
+      <div class="tl-card reveal"><div class="tl-month">12</div><div class="tl-label">Full Coverage</div><div class="tl-rev">₹36L</div><div class="tl-task">Full South India. 65+ regular buyers. Evaluate capacity expansion financing. Year 2 planning.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SUBSIDIES -->
+<section id="subsidies">
+  <div class="section-inner">
+    <span class="section-tag reveal">Government Support</span>
+    <h2 class="section-title reveal">Loans & <span>Subsidies</span></h2>
+    <p class="section-desc reveal">AP MSME Policy 4.0 (2024–2029) + Central government schemes provide ₹20–30 Lakhs in benefits over 5 years. The CGTMSE scheme means zero collateral required on the bank loan.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px;" class="reveal">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:32px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--teal);margin-bottom:4px;">Bank Loan — CGTMSE Scheme</div>
+        <table style="width:100%;font-size:14px;margin-top:16px;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px 0;color:var(--muted)">Loan Amount</td><td style="text-align:right;color:var(--amber);font-family:'Space Mono',monospace;font-size:13px;">₹40 Lakhs</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px 0;color:var(--muted)">Your Contribution</td><td style="text-align:right;color:var(--amber);font-family:'Space Mono',monospace;font-size:13px;">₹11 Lakhs</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px 0;color:var(--muted)">Interest Rate</td><td style="text-align:right;color:var(--amber);font-family:'Space Mono',monospace;font-size:13px;">11–12% p.a.</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px 0;color:var(--muted)">Collateral Required</td><td style="text-align:right;color:var(--green);font-family:'Space Mono',monospace;font-size:13px;">NIL ✓</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05)"><td style="padding:10px 0;color:var(--muted)">Tenure</td><td style="text-align:right;color:var(--amber);font-family:'Space Mono',monospace;font-size:13px;">7 years</td></tr>
+          <tr><td style="padding:10px 0;color:var(--muted)">EMI (from Month 13)</td><td style="text-align:right;color:var(--amber);font-family:'Space Mono',monospace;font-size:13px;">~₹78,000/month</td></tr>
+        </table>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:32px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--teal);margin-bottom:4px;">5-Year Total Benefits</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;color:var(--green);margin:16px 0 8px;">₹25L</div>
+        <div style="font-size:14px;color:var(--muted);">Combined AP MSME Policy 4.0 subsidies + interest savings over 5 years</div>
+        <div style="margin-top:16px;font-family:'Space Mono',monospace;font-size:11px;color:var(--teal);">APPLY THROUGH: AP iPass at ipass.ap.gov.in<br>DIC: Mangalam Road, Tirupati — 0877-2236702</div>
+      </div>
+    </div>
+
+    <div class="subsidy-grid">
+      <div class="subsidy-card reveal">
+        <div class="subsidy-amount">25%</div>
+        <div class="subsidy-name">Capital Investment Subsidy</div>
+        <div class="subsidy-how">25% of Fixed Capital Investment, max ₹1.5 Cr. Paid in 3 installments over 3 years. Apply post-DCP to AP Industries Dept.</div>
+      </div>
+      <div class="subsidy-card reveal">
+        <div class="subsidy-amount">₹1.5</div>
+        <div class="subsidy-name">Power Cost Reimbursement</div>
+        <div class="subsidy-how">₹0.75–1.5/unit for 5 years. Submit electricity bills quarterly. Verify exact rate for Tirupati district with DIC.</div>
+      </div>
+      <div class="subsidy-card reveal">
+        <div class="subsidy-amount">100%</div>
+        <div class="subsidy-name">Net SGST Reimbursement</div>
+        <div class="subsidy-how">100% SGST reimbursement for Micro enterprises, 50% for Small, for 5 years. File monthly GST returns and claim annually.</div>
+      </div>
+      <div class="subsidy-card reveal">
+        <div class="subsidy-amount">6%</div>
+        <div class="subsidy-name">Interest Subsidy</div>
+        <div class="subsidy-how">6% p.a. interest subsidy on term loan for 5 years. Reduces effective cost to ~5–6%. Submit bank certificates annually.</div>
+      </div>
+      <div class="subsidy-card reveal">
+        <div class="subsidy-amount">100%</div>
+        <div class="subsidy-name">Stamp Duty Reimbursement</div>
+        <div class="subsidy-how">100% of stamp duty on land/shed purchase or lease. One-time claim at time of document registration.</div>
+      </div>
+      <div class="subsidy-card reveal">
+        <div class="subsidy-amount">+5%</div>
+        <div class="subsidy-name">SC/ST / Women Extra</div>
+        <div class="subsidy-how">Additional 5% capital subsidy for SC/ST entrepreneurs. Women entrepreneurs also eligible for 5% extra. Stackable with AP Policy 4.0.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUALITY -->
+<section id="quality" style="background:var(--bg3);">
+  <div class="section-inner">
+    <span class="section-tag reveal">Technical Standards</span>
+    <h2 class="section-title reveal">Quality <span>Specifications</span></h2>
+    <p class="section-desc reveal">Every batch is tested in-house. Certificate of Analysis issued with every delivery. These specs meet or exceed what large institutional buyers require.</p>
+
+    <div class="spec-grid">
+      <div class="spec-card reveal">
+        <div class="spec-header">
+          <div class="spec-title">SLS 92% Needles</div>
+          <div class="spec-subtitle">Sodium Lauryl Sulfate — Anionic Surfactant</div>
+        </div>
+        <div class="spec-row"><span class="spec-param">Active Matter (SLS %)</span><span class="spec-val">≥ 92.0%</span><span class="spec-target">Target: 93–94%</span></div>
+        <div class="spec-row"><span class="spec-param">pH (1% solution)</span><span class="spec-val">7.0–9.0</span><span class="spec-target">Target: 7.5–8.5</span></div>
+        <div class="spec-row"><span class="spec-param">Moisture Content</span><span class="spec-val">&lt; 3.0%</span><span class="spec-target">Target: &lt; 1.5%</span></div>
+        <div class="spec-row"><span class="spec-param">Sodium Sulfate</span><span class="spec-val">&lt; 5.0%</span><span class="spec-target">Target: &lt; 3.0%</span></div>
+        <div class="spec-row"><span class="spec-param">Unsulfonated Matter</span><span class="spec-val">&lt; 2.0%</span><span class="spec-target">Target: &lt; 1.0%</span></div>
+        <div class="spec-row"><span class="spec-param">Appearance</span><span class="spec-val">White crystals</span><span class="spec-target">Bright white uniform</span></div>
+        <div class="spec-row"><span class="spec-param">Heavy Metals (Pb)</span><span class="spec-val">&lt; 10 ppm</span><span class="spec-target">Target: &lt; 5 ppm</span></div>
+        <div class="spec-row"><span class="spec-param">Test Method</span><span class="spec-val">MBAS Titration</span><span class="spec-target">Auto-titrator</span></div>
+      </div>
+
+      <div class="spec-card reveal">
+        <div class="spec-header">
+          <div class="spec-title">CAPB 35% Liquid</div>
+          <div class="spec-subtitle">Cocamidopropyl Betaine — Amphoteric Surfactant</div>
+        </div>
+        <div class="spec-row"><span class="spec-param">Active Matter (Betaine %)</span><span class="spec-val">≥ 35.0%</span><span class="spec-target">Target: 35.5–36.0%</span></div>
+        <div class="spec-row"><span class="spec-param">pH</span><span class="spec-val">4.5–6.5</span><span class="spec-target">Target: 5.0–5.5</span></div>
+        <div class="spec-row"><span class="spec-param">Free Amine Content</span><span class="spec-val">&lt; 0.5%</span><span class="spec-target">Target: &lt; 0.3%</span></div>
+        <div class="spec-row"><span class="spec-param">Sodium Chloride (NaCl)</span><span class="spec-val">&lt; 5.0%</span><span class="spec-target">Target: &lt; 3.0%</span></div>
+        <div class="spec-row"><span class="spec-param">Viscosity at 20°C</span><span class="spec-val">200–800 cP</span><span class="spec-target">Batch consistent</span></div>
+        <div class="spec-row"><span class="spec-param">Appearance</span><span class="spec-val">Clear to pale yellow</span><span class="spec-target">Water-white preferred</span></div>
+        <div class="spec-row"><span class="spec-param">Heavy Metals (Pb)</span><span class="spec-val">&lt; 10 ppm</span><span class="spec-target">Target: &lt; 5 ppm</span></div>
+        <div class="spec-row"><span class="spec-param">Test Method</span><span class="spec-val">Potentiometric titration</span><span class="spec-target">Karl Fischer (moisture)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BUYERS -->
+<section id="buyers">
+  <div class="section-inner">
+    <span class="section-tag reveal">Target Market</span>
+    <h2 class="section-title reveal">Buyer <span>Database</span></h2>
+    <p class="section-desc reveal">Three-tiered buyer strategy covering large contract manufacturers down to artisan soap makers. South India has 500+ potential buyers we can serve.</p>
+
+    <div class="buyers-tabs reveal">
+      <button class="tab-btn active" onclick="showBuyers('t1',this)">Tier 1 — Large</button>
+      <button class="tab-btn" onclick="showBuyers('t2',this)">Tier 2 — Mid-Size</button>
+      <button class="tab-btn" onclick="showBuyers('t3',this)">Tier 3 — Emerging</button>
+    </div>
+
+    <div id="t1" class="buyers-grid">
+      <div class="buyer-card"><div class="buyer-name">Wintrust Pharma</div><div class="buyer-loc">Chennai, Tamil Nadu</div><div class="buyer-vol">10–50 MT/month</div><div class="buyer-prod">SLS 92% Needles</div></div>
+      <div class="buyer-card"><div class="buyer-name">Pandian Surfactants</div><div class="buyer-loc">Chennai, Tamil Nadu</div><div class="buyer-vol">8–25 MT/month</div><div class="buyer-prod">SLS + CAPB</div></div>
+      <div class="buyer-card"><div class="buyer-name">Dermasist Lab</div><div class="buyer-loc">Bangalore, Karnataka</div><div class="buyer-vol">5–20 MT/month</div><div class="buyer-prod">CAPB 35%</div></div>
+      <div class="buyer-card"><div class="buyer-name">Metro Soaps</div><div class="buyer-loc">Salem, Tamil Nadu</div><div class="buyer-vol">15–40 MT/month</div><div class="buyer-prod">SLS 92% Needles</div></div>
+    </div>
+
+    <div id="t2" class="buyers-grid" style="display:none;">
+      <div class="buyer-card"><div class="buyer-name">Sri Ram Balaji Chemicals</div><div class="buyer-loc">Salem, Tamil Nadu</div><div class="buyer-vol">5–15 MT/month</div><div class="buyer-prod">SLS Needles</div></div>
+      <div class="buyer-card"><div class="buyer-name">Cochin Petromins</div><div class="buyer-loc">Kochi, Kerala</div><div class="buyer-vol">3–10 MT/month</div><div class="buyer-prod">SLS + CAPB</div></div>
+      <div class="buyer-card"><div class="buyer-name">Bhaarath Bio Products</div><div class="buyer-loc">Coimbatore, Tamil Nadu</div><div class="buyer-vol">2–8 MT/month</div><div class="buyer-prod">CAPB 35%</div></div>
+      <div class="buyer-card"><div class="buyer-name">PATA Detergents</div><div class="buyer-loc">Malappuram, Kerala</div><div class="buyer-vol">2–6 MT/month</div><div class="buyer-prod">SLS Needles</div></div>
+      <div class="buyer-card"><div class="buyer-name">Tirupati Local Soap Clusters</div><div class="buyer-loc">Tirupati / Chittoor, AP</div><div class="buyer-vol">500 kg–5 MT</div><div class="buyer-prod">Both products</div></div>
+    </div>
+
+    <div id="t3" class="buyers-grid" style="display:none;">
+      <div class="buyer-card"><div class="buyer-name">Handmade Soap Makers</div><div class="buyer-loc">Amazon / Flipkart India</div><div class="buyer-vol">500+ sellers</div><div class="buyer-prod">Small batches SLS + CAPB</div></div>
+      <div class="buyer-card"><div class="buyer-name">Ayurvedic Shampoo Units</div><div class="buyer-loc">Kerala — KVIC Cluster</div><div class="buyer-vol">200+ cottage units</div><div class="buyer-prod">CAPB 35% (mild)</div></div>
+      <div class="buyer-card"><div class="buyer-name">Hotel Amenity Suppliers</div><div class="buyer-loc">Bangalore, Chennai, Hyderabad</div><div class="buyer-vol">50+ suppliers</div><div class="buyer-prod">SLS + CAPB</div></div>
+      <div class="buyer-card"><div class="buyer-name">White-Label FMCG Makers</div><div class="buyer-loc">South India (D2C brands)</div><div class="buyer-vol">Growing fast</div><div class="buyer-prod">Both products + SLSA</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RISK -->
+<section id="risk" style="background:var(--bg2);">
+  <div class="section-inner">
+    <span class="section-tag reveal">Risk Management</span>
+    <h2 class="section-title reveal">Risk <span>Register</span></h2>
+    <p class="section-desc reveal">Every business has risks. The key is identifying them early and having a mitigation plan before they become problems.</p>
+
+    <div class="risk-header reveal">
+      <span>Risk</span><span>Likelihood</span><span>Impact</span><span>Mitigation</span>
+    </div>
+
+    <div class="risk-row reveal"><span class="risk-name">Raw material price spike (lauryl alcohol +20%)</span><span class="risk-pill pill-med">MEDIUM</span><span class="risk-pill pill-high">HIGH</span><span class="risk-mitigation">Lock in 3-month fixed-price supply contracts with Gujarat suppliers. Maintain 45-day safety stock.</span></div>
+
+    <div class="risk-row reveal"><span class="risk-name">APPCB approval delayed by 2–3 months</span><span class="risk-pill pill-high">HIGH</span><span class="risk-pill pill-med">MEDIUM</span><span class="risk-mitigation">Apply CTE in Week 1. Use bridge period to begin CAPB resale from Cortex Industries. Keep 3-month cash reserve.</span></div>
+
+    <div class="risk-row reveal"><span class="risk-name">Buyer payment default or delay</span><span class="risk-pill pill-med">MEDIUM</span><span class="risk-pill pill-high">HIGH</span><span class="risk-mitigation">ECGC credit insurance. Strict credit limits. Diversify across 20+ buyers. Never expose >20% receivables to one buyer.</span></div>
+
+    <div class="risk-row reveal"><span class="risk-name">Product quality rejection by large buyer</span><span class="risk-pill pill-low">LOW</span><span class="risk-pill pill-high">HIGH</span><span class="risk-mitigation">Rigorous in-batch QC. Retain samples 6 months. Clear batch correction SOP. Replacement delivered within 48 hours.</span></div>
+
+    <div class="risk-row reveal"><span class="risk-name">Chinese import price dumping (−30%)</span><span class="risk-pill pill-med">MEDIUM</span><span class="risk-pill pill-med">MEDIUM</span><span class="risk-mitigation">Compete on speed, quality, credit — not just price. Build sticky buyer relationships. Petition DGTR for anti-dumping duty if needed.</span></div>
+
+    <div class="risk-row reveal"><span class="risk-name">Industrial accident — acid spill / fire</span><span class="risk-pill pill-low">LOW</span><span class="risk-pill pill-high">VERY HIGH</span><span class="risk-mitigation">Full PPE mandatory. Acid bunding + containment. Fire suppression system. Quarterly drills. ₹1L+ insurance + workmen's compensation.</span></div>
+
+    <div class="risk-row reveal"><span class="risk-name">Critical equipment failure (reactor)</span><span class="risk-pill pill-med">MEDIUM</span><span class="risk-pill pill-high">HIGH</span><span class="risk-mitigation">Buy from reputable manufacturer. 2-year AMC contract. Keep critical spare parts on-site (seals, pumps, valves).</span></div>
+
+    <div class="risk-row reveal"><span class="risk-name">Key technical staff departure</span><span class="risk-pill pill-med">MEDIUM</span><span class="risk-pill pill-med">MEDIUM</span><span class="risk-mitigation">Document all SOPs. Cross-train operators. Competitive salary + performance incentive. Knowledge should never be in one person's head.</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTIONS -->
+<section id="projections">
+  <div class="section-inner">
+    <span class="section-tag reveal">Financial Outlook</span>
+    <h2 class="section-title reveal">Revenue <span>Projections</span></h2>
+    <p class="section-desc reveal">Conservative to target range for Year 1. EMI begins Month 13. Year 2 sees major scale-up as market relationships mature.</p>
+
+    <div class="proj-cards">
+      <div class="proj-card reveal">
+        <div class="proj-label">Year 1 Revenue Target</div>
+        <div class="proj-val">₹3Cr</div>
+        <div class="proj-sub">₹1.8–2.0 Cr conservative</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-label">Year 1 Net Profit</div>
+        <div class="proj-val">₹45L</div>
+        <div class="proj-sub">₹20–30 Cr conservative range</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-label">Year 2 Revenue</div>
+        <div class="proj-val">₹6Cr</div>
+        <div class="proj-sub">₹5–7 Cr target range</div>
+      </div>
+    </div>
+
+    <div class="revenue-chart reveal">
+      <div class="rev-chart-title">Monthly Revenue Target — Year 1 (₹ Lakhs)</div>
+      <div class="bar-chart" id="barChart">
+        <div class="bar-col"><div class="bar-val">0</div><div class="bar-block" style="--bar-height:2px;" data-h="2px"></div><div class="bar-month">M1</div></div>
+        <div class="bar-col"><div class="bar-val">0</div><div class="bar-block" style="--bar-height:2px;" data-h="2px"></div><div class="bar-month">M2</div></div>
+        <div class="bar-col"><div class="bar-val">1L</div><div class="bar-block" style="--bar-height:4px;" data-h="4px"></div><div class="bar-month">M3</div></div>
+        <div class="bar-col"><div class="bar-val">3L</div><div class="bar-block" style="--bar-height:8px;" data-h="8px"></div><div class="bar-month">M4</div></div>
+        <div class="bar-col"><div class="bar-val">8L</div><div class="bar-block" style="--bar-height:22px;" data-h="22px"></div><div class="bar-month">M5</div></div>
+        <div class="bar-col"><div class="bar-val">13L</div><div class="bar-block" style="--bar-height:35px;" data-h="35px"></div><div class="bar-month">M6</div></div>
+        <div class="bar-col"><div class="bar-val">20L</div><div class="bar-block" style="--bar-height:54px;" data-h="54px"></div><div class="bar-month">M7</div></div>
+        <div class="bar-col"><div class="bar-val">24L</div><div class="bar-block" style="--bar-height:65px;" data-h="65px"></div><div class="bar-month">M8</div></div>
+        <div class="bar-col"><div class="bar-val">28L</div><div class="bar-block" style="--bar-height:76px;" data-h="76px"></div><div class="bar-month">M9</div></div>
+        <div class="bar-col"><div class="bar-val">31L</div><div class="bar-block" style="--bar-height:84px;" data-h="84px"></div><div class="bar-month">M10</div></div>
+        <div class="bar-col"><div class="bar-val">33L</div><div class="bar-block" style="--bar-height:89px;" data-h="89px"></div><div class="bar-month">M11</div></div>
+        <div class="bar-col"><div class="bar-val">36L</div><div class="bar-block" style="--bar-height:98px;" data-h="98px"></div><div class="bar-month">M12</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GAPS -->
+<section id="gaps" style="background:var(--bg2);">
+  <div class="section-inner">
+    <span class="section-tag reveal">Plan Improvements</span>
+    <h2 class="section-title reveal">What Was <span>Missing</span></h2>
+    <p class="section-desc reveal">Key gaps identified in the original plan — all addressed in this enhanced version. Red = critical gap fixed. Green = added recommendation.</p>
+
+    <div class="gaps-grid">
+      <div class="gap-card reveal"><div class="gap-title"><span class="gap-icon">⚠️</span>Effluent Treatment Plant (ETP) Not Budgeted</div><div class="gap-text">Mandatory for APPCB CTO approval. No ETP = no Consent to Operate = illegal production. Added ₹1L to budget. Design neutralization + settling tank before CTE.</div></div>
+      <div class="gap-card reveal"><div class="gap-title"><span class="gap-icon">⚠️</span>DM Water System Missing</div><div class="gap-text">Tap/borewell water = dissolved salts = batch contamination and customer rejections. Added ₹80K for on-site DM plant. Install before first trial batch.</div></div>
+      <div class="gap-card reveal"><div class="gap-title"><span class="gap-icon">⚠️</span>Budget Underestimated at ₹45L</div><div class="gap-text">ETP + DM water + acid safety = ₹2.3L more. Without this cash, you face a mid-project crunch. Revised to ₹48–52L. Apply for ₹40L loan (not ₹36L).</div></div>
+      <div class="gap-card reveal"><div class="gap-title"><span class="gap-icon">⚠️</span>Only 3 Licenses Listed (vs 11+ Required)</div><div class="gap-text">Missing CTE/CTO (APPCB), Hazardous Waste Authorization, Factory Act, IEC, BIS, and Trade License. PCB approvals take 30–60 days each. Start CTE Week 1.</div></div>
+      <div class="gap-card reveal"><div class="gap-title"><span class="gap-icon">⚠️</span>CAPB Synthesis Inputs Incomplete</div><div class="gap-text">Original plan says "coconut derivative." Actual inputs: CDEA + MCAA + DMAPA — three different suppliers, different hazard profiles. Validate with chemist before bulk procurement.</div></div>
+      <div class="gap-card reveal"><div class="gap-title"><span class="gap-icon">⚠️</span>No Risk Analysis Section</div><div class="gap-text">Banks require a formal risk register. Also essential for your own operational planning. Added 8-risk table with likelihood, impact, and mitigation strategies.</div></div>
+      <div class="gap-card tip reveal"><div class="gap-title"><span class="gap-icon">✅</span>ISO 9001 Roadmap Added</div><div class="gap-text">Large institutional buyers (pharma, hotels) mandate ISO certification. Costs ₹1.5–2.5L, takes 3–4 months. Start application Month 6–8. Commands 10–15% price premium.</div></div>
+      <div class="gap-card tip reveal"><div class="gap-title"><span class="gap-icon">✅</span>Revenue Bridge Strategy Added</div><div class="gap-text">Buy ready CAPB 35% from Cortex Industries at ₹85/kg, resell at ₹175/kg (69% margin) while your reactor is being commissioned. Cash flow before production starts.</div></div>
+      <div class="gap-card tip reveal"><div class="gap-title"><span class="gap-icon">✅</span>Anti-Dumping Duty Strategy</div><div class="gap-text">No current AD duty on SLS from China. Monitor DGTR at dgtr.gov.in. If Chinese dumping hurts margins, file petition. Join/form Indian Surfactant Manufacturers Association.</div></div>
+      <div class="gap-card tip reveal"><div class="gap-title"><span class="gap-icon">✅</span>Insurance Coverage Plan</div><div class="gap-text">Plant & machinery, stock, and workers all require insurance. Budget ₹50–80K/year for comprehensive plant insurance + workmen's compensation. Not optional for a chemical plant.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHECKLIST -->
+<section id="checklist">
+  <div class="section-inner">
+    <span class="section-tag reveal">Action Plan</span>
+    <h2 class="section-title reveal">Execution <span>Checklist</span></h2>
+    <p class="section-desc reveal">Click checkboxes to track your progress. These are the exact actions needed — in the right order.</p>
+
+    <div class="checklist-phases">
+      <div class="phase-card reveal">
+        <div class="phase-header">
+          <div class="phase-num">W1</div>
+          <div><div class="phase-title">Week 1 — Immediate</div><div class="phase-sub">Do These Today</div></div>
+        </div>
+        <div class="phase-items">
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Register Udyam MSME at udyamregistration.gov.in — FREE, 1 hour</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Register for GST at gst.gov.in</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Open business current account (SBI / Indian Bank for CGTMSE)</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Register Company / LLP at MCA portal</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Read AP MSME Policy 4.0 — apindustries.gov.in</span></div>
+        </div>
+      </div>
+
+      <div class="phase-card reveal">
+        <div class="phase-header">
+          <div class="phase-num">M1</div>
+          <div><div class="phase-title">Month 1 — Foundation</div><div class="phase-sub">Legal & Financial</div></div>
+        </div>
+        <div class="phase-items">
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Apply for CTE at APPCB — BEFORE any construction</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Visit Tirupati DIC — get subsidy forms, meet nodal officer</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Apply for CGTMSE bank loan (₹40L)</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Get 3 machinery quotes (Pune / Ahmedabad / Coimbatore)</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Contact Virava Chemicals — quote 500 kg lauryl alcohol</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Find 3 local H₂SO₄ suppliers in Tirupati/Chittoor</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Hire experienced Chemical Plant Manager</span></div>
+        </div>
+      </div>
+
+      <div class="phase-card reveal">
+        <div class="phase-header">
+          <div class="phase-num">M2</div>
+          <div><div class="phase-title">Month 2 — Build</div><div class="phase-sub">Construction & Setup</div></div>
+        </div>
+        <div class="phase-items">
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Bank loan disbursed — place machinery order</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Begin shed construction on Tirupati land</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Apply for Factory License (Factories Act 1948)</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Apply for Fire NOC</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Commission DM water treatment plant (₹60–80K)</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Build Effluent Treatment Plant (ETP) — MANDATORY</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Install acid safety infrastructure (bunding, PPE, eyewash)</span></div>
+        </div>
+      </div>
+
+      <div class="phase-card reveal">
+        <div class="phase-header">
+          <div class="phase-num">M3+</div>
+          <div><div class="phase-title">Month 3+ — Launch</div><div class="phase-sub">Production & Sales</div></div>
+        </div>
+        <div class="phase-items">
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Receive CTO from APPCB — legal to produce</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">First 100 kg SLS trial batch — test all parameters</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Send 25 kg free samples + CoA to 5 target buyers</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">First commercial invoice — collect payment in 15 days</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">Apply for ISO 9001 (start Month 6–8)</span></div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-text">File first SGST reimbursement claim</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SURF<span>TECH</span> INDUSTRIES</div>
+  <div class="footer-sub">Surfactant Manufacturing Plant — Tirupati, Andhra Pradesh — Confidential Business Plan 2025</div>
+  <ul class="footer-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#investment">Investment</a></li>
+    <li><a href="#subsidies">Subsidies</a></li>
+    <li><a href="#quality">Quality</a></li>
+    <li><a href="#buyers">Buyers</a></li>
+    <li><a href="#risk">Risk</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+  </ul>
+  <div class="footer-copy">SLS 92% Needles · CAPB 35% Liquid · ₹45–51L Investment · ₹2.5–3 Cr Year 1 Revenue</div>
+  <div style="margin-top:32px;padding-top:32px;border-top:1px solid rgba(0,194,204,0.15);">
+    <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:24px;">Download Documents</p>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
+      <div style="text-align:center;">
+        <a href="surfactant_plan_professional.docx" download class="btn-download">
+          ⬇ &nbsp;Business Plan
+        </a>
+        <p style="margin-top:10px;font-size:12px;color:rgba(138,155,176,0.7);max-width:240px;">Complete plan — investment breakdown, AP subsidies, buyer database, licenses, 12-month roadmap</p>
+      </div>
+      <div style="text-align:center;">
+        <a href="surfactant_technical_deepdive.docx" download class="btn-download" style="background:linear-gradient(135deg,#2ecc71,#1aaa55);border-color:#2ecc71;">
+          ⬇ &nbsp;Technical Report
+        </a>
+        <p style="margin-top:10px;font-size:12px;color:rgba(138,155,176,0.7);max-width:240px;">11 Q&As — glycerin recovery, CAPB batch balance, ETP design, generator sizing, bank loan paragraph, KYC checklist</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── REVEAL ON SCROLL ──
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // ── MARGIN BARS ANIMATE ──
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.mbar-fill').forEach(bar => {
+          setTimeout(() => bar.classList.add('animate'), 300);
+        });
+        barObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.margin-bars').forEach(el => barObserver.observe(el));
+
+  // ── BAR CHART ANIMATE ──
+  const chartObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.bar-block').forEach((bar, i) => {
+          setTimeout(() => bar.classList.add('animate'), i * 80);
+        });
+        chartObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.revenue-chart').forEach(el => chartObserver.observe(el));
+
+  // ── BUYER TABS ──
+  function showBuyers(id, btn) {
+    document.querySelectorAll('.buyers-grid').forEach(g => g.style.display = 'none');
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).style.display = 'grid';
+    btn.classList.add('active');
+  }
+
+  // ── CHECKLIST ──
+  function toggleCheck(item) {
+    const box = item.querySelector('.check-box');
+    box.classList.toggle('checked');
+    item.classList.toggle('checked-item');
+  }
+
+  // ── ACTIVE NAV ──
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) cur = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--teal)' : '';
+    });
+  });
+</script>
+</body>
+</html>
